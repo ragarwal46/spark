@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  overflow: auto;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: 100%;
+}
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input,
+.user-details .input-box select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+form .category {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0;
+}
+
+
+.clicked {
+  background-color: #9b59b6;
+  color: #fff; 
+}
+
+form .gender-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  margin-right: 10px;
+}
+form .gender-option:last-child {
+  margin-right: 0;
+}
+form .gender-option:hover {
+  background-color: #f1f1f1;
+}
+form .gender-option input[type="radio"] {
+  display: none;
+}
+form .gender-option input[type="radio"]:checked + span {
+  background-color: #9b59b6;
+  color: #fff;
+  border-color: #9b59b6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+form .yes-no-details {
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form .yes-no-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+form .yes-no-details table tr {
+  border-bottom: 1px solid #ccc;
+}
+form .yes-no-details table td {
+  padding: 10px 0;
+}
+form .yes-no-details table td.yes-no-options {
+  display: flex;
+  justify-content: flex-end;
+}
+form .yes-no-details table td.yes-no-options label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+form .yes-no-details table td.yes-no-options label:hover,
+form .yes-no-details table td.yes-no-options label input[type="radio"]:checked + span {
+  background-color: #9b59b6;
+  color: #fff;
+  border-color: #9b59b6;
+}
+form .yes-no-details table td.yes-no-options label span {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+form .yes-no-details table td.yes-no-options label input[type="radio"] {
+  display: none;
+}
+form .transport-select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  width: calc(100% - 10px);
+  display: inline-block;
+}
+form .transport-select:focus {
+  border-color: #9b59b6;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
