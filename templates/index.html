@@ -1,11 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weight Classifier</title>
+  <meta charset="UTF-8">
+  <title>Weight Classifier</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    
+  <div class="container">
+    <div class="title">Weight Classifier</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box full-width">
+            <span class="details">Gender</span>
+            <div class="category">
+              <label for="dot-1" class="gender-option">
+                <input type="radio" id="dot-1" name="gender" value="Male" required>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2" class="gender-option">
+                <input type="radio" id="dot-2" name="gender" value="Female" required>
+                <span class="gender">Female</span>
+              </label>
+            </div>
+          </div>
+          <div class="input-box full-width">
+            <span class="details">Age</span>
+            <input type="number" placeholder="Enter your age" required>
+          </div>
+          <div class="input-box full-width">
+            <span class="details">Height</span>
+            <input type="number" placeholder="Feet" required style="width: 48%; display: inline-block;">
+            <input type="number" placeholder="Inches" required style="width: 48%; display: inline-block;">
+          </div>
+          <div class="input-box full-width">
+            <span class="details">How many main meals do you have daily?</span>
+            <input type="number" placeholder="Enter number" required>
+          </div>
+          <div class="input-box full-width">
+            <span class="details">How much water do you drink daily (fl oz)?</span>
+            <input type="number" placeholder="Enter amount" required>
+          </div>
+          <div class="input-box full-width">
+            <span class="details">How often do you have physical activity (hrs)?</span>
+            <input type="number" placeholder="Enter number" required>
+          </div>
+          <div class="input-box full-width">
+            <span class="details">How much time do you use technological devices such as cell phone, video games, television, computer, and others (hrs)?</span>
+            <input type="number" placeholder="Enter number" required>
+          </div>
+        </div>
+        <div class="yes-no-details">
+          <table>
+            <tr>
+              <td class="details">Has a family member suffered or suffers from being overweight?</td>
+              <td class="yes-no-options">
+                <label>
+                  <input type="radio" name="family-overweight" value="Yes" required>
+                  <span class="yes-no">Yes</span>
+                </label>
+                <label>
+                  <input type="radio" name="family-overweight" value="No" required>
+                  <span class="yes-no">No</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="details">Do you eat high caloric food frequently?</td>
+              <td class="yes-no-options">
+                <label>
+                  <input type="radio" name="high-caloric-food" value="Yes" required>
+                  <span class="yes-no">Yes</span>
+                </label>
+                <label>
+                  <input type="radio" name="high-caloric-food" value="No" required>
+                  <span class="yes-no">No</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="details">Do you usually eat vegetables in your meals?</td>
+              <td class="yes-no-options">
+                <label>
+                  <input type="radio" name="eat-vegetables" value="Yes" required>
+                  <span class="yes-no">Yes</span>
+                </label>
+                <label>
+                  <input type="radio" name="eat-vegetables" value="No" required>
+                  <span class="yes-no">No</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="details">Do you eat any food between meals?</td>
+              <td class="yes-no-options">
+                <label>
+                  <input type="radio" name="food-between-meals" value="Yes" required>
+                  <span class="yes-no">Yes</span>
+                </label>
+                <label>
+                  <input type="radio" name="food-between-meals" value="No" required>
+                  <span class="yes-no">No</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="details">Do you smoke?</td>
+              <td class="yes-no-options">
+                <label>
+                  <input type="radio" name="smoke" value="Yes" required>
+                  <span class="yes-no">Yes</span>
+                </label>
+                <label>
+                  <input type="radio" name="smoke" value="No" required>
+                  <span class="yes-no">No</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="details">Do you monitor the calories you eat daily?</td>
+              <td class="yes-no-options">
+                <label>
+                  <input type="radio" name="monitor-calories" value="Yes" required>
+                  <span class="yes-no">Yes</span>
+                </label>
+                <label>
+                  <input type="radio" name="monitor-calories" value="No" required>
+                  <span class="yes-no">No</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="details">How often do you drink alcohol?</td>
+              <td class="yes-no-options">
+                <label>
+                  <input type="radio" name="drink-alcohol" value="Never" required>
+                  <span class="yes-no">Never</span>
+                </label>
+                <label>
+                  <input type="radio" name="drink-alcohol" value="Sometimes" required>
+                  <span class="yes-no">Sometimes</span>
+                </label>
+                <label>
+                  <input type="radio" name="drink-alcohol" value="Frequently" required>
+                  <span class="yes-no">Frequently</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="details">Which transportation do you usually use?</td>
+              <td class="yes-no-options">
+                <select required>
+                  <option value="" disabled selected>Select transportation</option>
+                  <option value="Public Transport">Public Transport</option>
+                  <option value="Automobile">Automobile</option>
+                  <option value="Motorbike">Motorbike</option>
+                  <option value="Walking">Walking</option>
+                  <option value="Bike">Bike</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.gender-option, .yes-no-options label').forEach(option => {
+      option.addEventListener('click', function() {
+        // Remove the clicked class from all siblings
+        option.parentElement.querySelectorAll('.clicked').forEach(sibling => sibling.classList.remove('clicked'));
+        // Add the clicked class to the selected option
+        option.classList.add('clicked');
+      });
+    });
+  </script>
 </body>
 </html>
