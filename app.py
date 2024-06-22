@@ -15,7 +15,7 @@ def convert(data):
     print(data)
     gender = {'Male': 1, 'Female': 0}
     yes_no = {'Yes': 1, 'No': 0}
-    frequency = {'Frequently': 1, 'Sometimes': 2, 'No': 3}
+    frequency = {'Frequently': 1, 'Sometimes': 2, 'Never': 3}
     transport = {'Automobile': 0, 'Bike': 1, 'Motorbike': 2,'Public Transport': 3, 'Walking': 4}
     new_data = [gender[data[0]], int(data[1]), inches_to_meters(data[2], data[3]), pounds_to_kg(data[4])]
 
