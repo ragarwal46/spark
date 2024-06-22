@@ -15,7 +15,6 @@ for label in unencoded:
     df.drop(label , axis = 1, inplace = True)
     df[label] = encoded
 
-
 attributes = df.drop('LEVEL', axis = 1)
 weight_level = df['LEVEL']
 
