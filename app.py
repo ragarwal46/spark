@@ -12,7 +12,6 @@ def inches_to_meters(feet, inches):
     return total_inches / 39.37
 
 def convert(data):
-    print(data)
     gender = {'Male': 1, 'Female': 0}
     yes_no = {'Yes': 1, 'No': 0}
     frequency = {'Frequently': 1, 'Sometimes': 2, 'Never': 3}
@@ -39,9 +38,13 @@ def interpret(number):
 def index():
     if request.method == 'POST':
         data = convert(list(request.form.to_dict().values()))
-        print(interpret(model.predict(np.array(data).reshape(1,-1))[0]))
-
+        result = interpret(model.predict(np.array(data).reshape(1,-1))[0])
+        return redirect(url_for('results', res = result))
     return render_template('index.html')
+
+@app.route('/results', methods = ['POST', 'GET'])
+def results():
+    return render_template('results.html', res = request.args.get('res'))
 
 if __name__ == '__main__':
     app.run(debug=True)
