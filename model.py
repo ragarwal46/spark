@@ -8,15 +8,14 @@ import pickle
 df = pd.read_csv('data.csv')
 
 # Converting categorical data into numberic data
-unencoded = ['family_history_with_overweight', 'Gender', 'FAVC', 'CAEC', 'SMOKE', 'SCC', 'CALC', 'MTRANS', 'LEVEL']
+unencoded = ['family_history', 'Gender', 'FAVC', 'CAEC', 'SMOKE', 'SCC', 'CALC', 'MTRANS', 'LEVEL']
 for label in unencoded:
     conv = LabelEncoder()
     encoded = conv.fit_transform(df[label])
     df.drop(label , axis = 1, inplace = True)
     df[label] = encoded
-df.to_csv('check.csv')
 
-# Assigning input and output of model
+
 attributes = df.drop('LEVEL', axis = 1)
 weight_level = df['LEVEL']
 
