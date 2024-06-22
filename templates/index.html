@@ -10,7 +10,7 @@
   <div class="container">
     <div class="title">Weight Classifier</div>
     <div class="content">
-      <form action="#">
+      <form method = "post">
         <div class="user-details">
           <div class="input-box full-width">
             <span class="details">Gender</span>
@@ -27,28 +27,32 @@
           </div>
           <div class="input-box full-width">
             <span class="details">Age</span>
-            <input type="number" placeholder="Enter your age" required>
+            <input name = "age" type="number" placeholder="Enter your age" required>
           </div>
           <div class="input-box full-width">
             <span class="details">Height</span>
-            <input type="number" placeholder="Feet" required style="width: 48%; display: inline-block;">
-            <input type="number" placeholder="Inches" required style="width: 48%; display: inline-block;">
+            <input type="number" name = "feet" placeholder="Feet" required style="width: 48%; display: inline-block;">
+            <input type="number" name = "inches" placeholder="Inches" required style="width: 48%; display: inline-block;">
+          </div>
+          <div class="input-box full-width">
+            <span class="details">Weight</span>
+            <input name = "weight" type="number" placeholder="Kilograms" required>
           </div>
           <div class="input-box full-width">
             <span class="details">How many main meals do you have daily?</span>
-            <input type="number" placeholder="Enter number" required>
+            <input name = "meals" type="number" placeholder="Enter number" required>
           </div>
           <div class="input-box full-width">
             <span class="details">How much water do you drink daily (fl oz)?</span>
-            <input type="number" placeholder="Enter amount" required>
+            <input name = "water" type="number" placeholder="Enter amount" required>
           </div>
           <div class="input-box full-width">
             <span class="details">How often do you have physical activity (hrs)?</span>
-            <input type="number" placeholder="Enter number" required>
+            <input name = "activity" type="number" placeholder="Enter number" required>
           </div>
           <div class="input-box full-width">
             <span class="details">How much time do you use technological devices such as cell phone, video games, television, computer, and others (hrs)?</span>
-            <input type="number" placeholder="Enter number" required>
+            <input name = "screen" type="number" placeholder="Enter number" required>
           </div>
         </div>
         <div class="yes-no-details">
@@ -151,7 +155,7 @@
             <tr>
               <td class="details">Which transportation do you usually use?</td>
               <td class="yes-no-options">
-                <select required>
+                <select required name = "transport">
                   <option value="" disabled selected>Select transportation</option>
                   <option value="Public Transport">Public Transport</option>
                   <option value="Automobile">Automobile</option>
@@ -164,7 +168,7 @@
           </table>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="Submit">
         </div>
       </form>
     </div>

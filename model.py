@@ -14,6 +14,7 @@ for label in unencoded:
     encoded = conv.fit_transform(df[label])
     df.drop(label , axis = 1, inplace = True)
     df[label] = encoded
+df.to_csv('check.csv')
 
 # Assigning input and output of model
 attributes = df.drop('LEVEL', axis = 1)
@@ -26,7 +27,6 @@ decision_tree = tree.DecisionTreeClassifier()
 decision_tree.fit(a_train, w_train)
 
 print(decision_tree.score(a_test, w_test))
-
 # Fitting model with all data
 decision_tree.fit(attributes, weight_level)
 pickle.dump(decision_tree, open('model.pkl', 'wb'))
