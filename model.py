@@ -27,6 +27,5 @@ decision_tree.fit(a_train, w_train)
 print(decision_tree.score(a_test, w_test))
 # Fitting model with all data
 decision_tree.fit(attributes, weight_level)
-print(decision_tree.predict(np.array([21.0, 1.8, 100, 3.0, 2.0, 0.0, 1.0, 1, 0, 0, 2, 0, 0, 3, 3]).reshape(1,-1)))
 
 pickle.dump(decision_tree, open('model.pkl', 'wb'))

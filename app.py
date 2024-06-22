@@ -33,8 +33,8 @@ def convert(data):
     return new_data
 
 def interpret(number):
-    levels = {0: 'are underweight', 1: 'are normal Weight', 2: 'have type 1 obesity', 3: 'have type 2 obesity', 
-              4: 'have type 3 obesity', 5:'are little overweight', 6:'are over weight'}
+    levels = {0: 'are underweight', 1: 'are normal weight', 2: 'have type 1 obesity', 3: 'have type 2 obesity', 
+              4: 'have type 3 obesity', 5:'are little overweight', 6:'are overweight'}
     return levels[number]
 
 @app.route('/', methods = ['POST', 'GET'])
