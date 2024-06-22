@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .results-box {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .results-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .result-item {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Survey Results</div>
+    <div class="content">
+      <div class="results-box">
+        <div class="results-title">Your Survey Results</div>
+        <div class="result-item"><strong>You are </strong></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
