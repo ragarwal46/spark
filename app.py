@@ -16,10 +16,12 @@ def convert(data):
     yes_no = {'Yes': 1, 'No': 0}
     frequency = {'Frequently': 1, 'Sometimes': 2, 'Never': 3}
     transport = {'Automobile': 0, 'Bike': 1, 'Motorbike': 2,'Public Transport': 3, 'Walking': 4}
-    new_data = [gender[data[0]], int(data[1]), inches_to_meters(data[2], data[3]), pounds_to_kg(data[4])]
+    new_data = [int(data[1]), inches_to_meters(data[2], data[3]), pounds_to_kg(data[4])]
 
     for item in data[5:9]:
         new_data.append(float(item))
+    
+    new_data.append(gender[data[0]])
 
     for item in data[9:13]:
         new_data.append(yes_no[item])
@@ -31,7 +33,8 @@ def convert(data):
     return new_data
 
 def interpret(number):
-    levels = {0: 'Underweight', 1: 'Normal Weight', 2: 'Obesity Type 1',3: 'Obesity Type 2', 4: 'Obesity Type 3', 5:'Overweight Level 1', 6:'Overweight Level 2'}
+    levels = {0: 'are underweight', 1: 'are normal Weight', 2: 'have type 1 obesity', 3: 'have type 2 obesity', 
+              4: 'have type 3 obesity', 5:'are little overweight', 6:'are over weight'}
     return levels[number]
 
 @app.route('/', methods = ['POST', 'GET'])
