@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import numpy as np
-from sklearn import tree
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
@@ -29,14 +28,18 @@ def convert(data):
     new_data.append(frequency[data[13]])
     new_data.append(frequency[data[14]])
     new_data.append(transport[data[15]])
-    
+
     return new_data
+
+def interpret(number):
+    levels = {0: 'Underweight', 1: 'Normal Weight', 2: 'Obesity Type 1',3: 'Obesity Type 2', 4: 'Obesity Type 3', 5:'Overweight Level 1', 6:'Overweight Level 2'}
+    return levels[number]
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():
     if request.method == 'POST':
         data = convert(list(request.form.to_dict().values()))
-        print(model.predict(np.array(data).reshape(1,-1))[0])
+        print(interpret(model.predict(np.array(data).reshape(1,-1))[0]))
 
     return render_template('index.html')
 
