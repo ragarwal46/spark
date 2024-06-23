@@ -55,7 +55,7 @@ def results():
             'are a little overweight': 'While this may not pose significant risks yet, it is important to manage it to avoid future health issues. Make minor adjustments to your diet by reducing sugary and high-fat foods, increase your daily physical activity like walking or light exercise, and monitor your weight regularly to ensure it stays within a healthy range. Staying hydrated and getting enough sleep also supports weight management.',
             'are overweight': 'To address this, implement a balanced diet with controlled portion sizes, engage in regular physical activity aiming for at least 150 minutes of exercise per week, set realistic weight loss goals, and track your progress. Seeking advice from a healthcare provider can offer personalized guidance to help you manage your weight effectively.'}
     results = request.args.get('res')
-    return render_template('results.html', res = results, details = tips[results])
+    return render_template('results.html', res = request.args.get('res'), details = tips[results])
 
 if __name__ == '__main__':
     app.run(debug=True)
