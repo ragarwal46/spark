@@ -20,6 +20,19 @@
     .result-item {
       margin-bottom: 10px;
     }
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #fff;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -30,6 +43,7 @@
         <div class="results-title">You {{res}}</div>
         <div class="result-item">{{details}}</div>
       </div>
+      <a href="http://127.0.0.1:5000/" class="back-button">Back to Home</a>
     </div>
   </div>
 </body>
