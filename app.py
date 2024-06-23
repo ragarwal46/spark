@@ -34,7 +34,7 @@ def convert(data):
 
 def interpret(number):
     levels = {0: 'are underweight', 1: 'are normal weight', 2: 'have type 1 obesity', 3: 'have type 2 obesity', 
-              4: 'have type 3 obesity', 5:'are little overweight', 6:'are overweight'}
+              4: 'have type 3 obesity', 5:'are a little overweight', 6:'are overweight'}
     return levels[number]
 
 @app.route('/', methods = ['POST', 'GET'])
@@ -47,7 +47,15 @@ def index():
 
 @app.route('/results', methods = ['POST', 'GET'])
 def results():
-    return render_template('results.html', res = request.args.get('res'))
+    tips = {'are underweight': 'Being underweight can lead to various health issues, such as a weakened immune system, osteoporosis, and fertility problems. To manage this, consider increasing your calorie intake with nutrient-rich foods, incorporating more protein and healthy fats into your diet, and engaging in strength training exercises to build muscle mass. It is also essential to consult a healthcare provider to check for any underlying health conditions.',
+            'are normal weight': 'Being of normal weight means your body weight is within the healthy range for your height. This balance between caloric intake and expenditure supports your overall well-being. To maintain this, keep a balanced diet with a variety of nutrients, stay active with regular exercise, and monitor your weight and health markers periodically. Additionally, managing stress and getting adequate sleep are crucial for maintaining your health.',
+            'have type 1 obesity': 'To manage this, adopt a healthy eating plan with reduced caloric intake, increase your physical activity to at least 150 minutes of moderate exercise per week, and seek support from a healthcare provider for personalized advice. Joining a weight management program can also provide additional support.',
+            'have type 2 obesity': 'Managing this condition involves following a structured weight loss program with dietary changes and exercise, considering behavioral therapy to support lifestyle changes, and consulting with a healthcare provider about possible medications or surgery. Regularly monitoring your health and following medical advice is crucial.',
+            'have type 3 obesity': 'To address this, engage in a comprehensive weight loss plan under medical supervision, explore all treatment options including bariatric surgery if recommended, and adopt healthy eating habits along with consistent physical activity. Close cooperation with healthcare providers is essential to manage and reduce health risks effectively.',
+            'are a little overweight': 'While this may not pose significant risks yet, it is important to manage it to avoid future health issues. Make minor adjustments to your diet by reducing sugary and high-fat foods, increase your daily physical activity like walking or light exercise, and monitor your weight regularly to ensure it stays within a healthy range. Staying hydrated and getting enough sleep also supports weight management.',
+            'are overweight': 'To address this, implement a balanced diet with controlled portion sizes, engage in regular physical activity aiming for at least 150 minutes of exercise per week, set realistic weight loss goals, and track your progress. Seeking advice from a healthcare provider can offer personalized guidance to help you manage your weight effectively.'}
+    results = request.args.get('res')
+    return render_template('results.html', res = results, details = tips[results])
 
 if __name__ == '__main__':
     app.run(debug=True)
